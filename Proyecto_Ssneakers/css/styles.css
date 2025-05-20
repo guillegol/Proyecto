@@ -1,0 +1,607 @@
+/* ==================================================================== */
+/* Archivo CSS Único: styles.css */
+/* Aquí defines TODOS los estilos para tu sitio web */
+/* ==================================================================== */
+
+/*
+  Paleta de Colores:
+  - Principal (Oscuro/Base): #212529
+  - Secundario (Acento): #ffc107
+  - Texto Principal (Claro): #f8f9fa
+  - Texto Secundario (Oscuro): #343a40
+  - Fondo (Claro): #ffffff
+  - Enlaces Footer (sobre fondo oscuro): #adb5bd
+  - Precio (Verde): #28a745
+*/
+
+/* ==================================================================== */
+/* Estilos Generales y Layout Base */
+/* ==================================================================== */
+
+body {
+    font-family: sans-serif; /* Fuente sans-serif por defecto */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el padding predeterminado del body */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    background-color: #ffffff; /* Color de fondo principal */
+    color: #343a40; /* Color de texto secundario por defecto */
+    display: flex; /* Usa flexbox para el layout principal */
+    flex-direction: column; /* Apila los elementos hijos verticalmente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto completo de la ventana */
+}
+
+header {
+    background-color: #212529; /* Color de fondo del encabezado */
+    color: #f8f9fa; /* Color de texto principal para el encabezado */
+    padding: 1rem 20px; /* Padding superior/inferior y lateral */
+    text-align: left; /* Alinea el texto a la izquierda */
+    display: flex; /* Usa flexbox para alinear elementos en el encabezado */
+    align-items: center; /* Centra verticalmente los elementos hijos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+header h1 {
+    margin: 0 20px 0 0; /* Margen a la derecha del título */
+    font-size: 2em; /* Tamaño de fuente para el título principal */
+}
+
+nav {
+    flex-grow: 1; /* Permite que la navegación ocupe el espacio restante */
+}
+
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+    display: flex; /* Usa flexbox para los elementos de la lista de navegación */
+    flex-wrap: wrap; /* Permite que los elementos de la lista se envuelvan */
+    align-items: center; /* Centra verticalmente los elementos de la lista */
+}
+
+nav ul li {
+    margin: 0 10px 0 0; /* Margen a la derecha de cada elemento de la lista */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+nav ul li a {
+    color: #f8f9fa; /* Color de los enlaces de navegación */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: bold; /* Texto en negrita */
+    padding: 5px 10px; /* Padding alrededor del texto del enlace */
+    display: block; /* Hace que el enlace ocupe todo el espacio del li */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+    color: #ffc107; /* Cambia el color del enlace al pasar el ratón */
+}
+
+main {
+    padding: 20px; /* Padding alrededor del contenido principal */
+    max-width: 1200px; /* Ancho máximo del contenido principal */
+    margin: 20px auto; /* Centra el contenido principal horizontalmente y añade margen */
+    background-color: #ffffff; /* Color de fondo del área principal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del área principal */
+    border-radius: 8px; /* Bordes redondeados */
+    flex-grow: 1; /* Permite que el main ocupe el espacio restante verticalmente */
+}
+
+footer {
+    background-color: #212529; /* Color de fondo del pie de página */
+    color: #f8f9fa; /* Color de texto principal para el pie de página */
+    padding: 20px; /* Padding alrededor del pie de página */
+    margin-top: 20px; /* Margen superior */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.footer-container {
+    max-width: 1200px; /* Ancho máximo del contenedor del pie de página */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    display: grid; /* Usa CSS Grid para las columnas del pie de página */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas responsivas */
+    gap: 20px; /* Espacio entre las columnas */
+    padding-bottom: 20px; /* Padding inferior */
+    border-bottom: 1px solid #495057; /* Línea separadora */
+}
+
+.footer-column h4 {
+    margin: 0 0 10px 0; /* Margen inferior para los títulos de columna */
+    color: #adb5bd; /* Color de los títulos de columna */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+.footer-column ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+    margin: 0; /* Elimina el margen de la lista */
+}
+
+.footer-column ul li {
+    margin-bottom: 5px; /* Margen inferior para cada elemento de la lista */
+}
+
+.footer-column ul li a {
+    color: #adb5bd; /* Color de los enlaces del pie de página */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 0.9em; /* Tamaño de fuente */
+    display: block; /* Hace que el enlace ocupe todo el espacio del li */
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline; /* Subraya al pasar el ratón */
+    color: #f8f9fa; /* Cambia el color al pasar el ratón */
+}
+
+.footer-info-links {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding */
+    margin: 20px auto 0 auto; /* Centra horizontalmente y añade margen superior */
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+.footer-info-links li {
+    margin: 0; /* Elimina el margen */
+    position: relative; /* Posición relativa para el pseudo-elemento */
+    padding: 0 10px; /* Padding lateral */
+}
+
+.footer-info-links li:not(:last-child)::after {
+    content: '|'; /* Añade un separador vertical */
+    color: #adb5bd; /* Color del separador */
+    position: absolute; /* Posición absoluta */
+    right: -2px; /* Posiciona a la derecha */
+    top: 0; /* Alinea en la parte superior */
+}
+
+.footer-info-links li a {
+    color: #f8f9fa; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1em; /* Tamaño de fuente */
+    display: inline-block; /* Permite padding y margen */
+}
+
+.footer-info-links li a:hover {
+    text-decoration: underline; /* Subraya al pasar el ratón */
+    color: #ffc107; /* Cambia el color al pasar el ratón */
+}
+
+.footer-bottom {
+    text-align: center; /* Centra el texto */
+    margin-top: 10px; /* Margen superior */
+    padding-top: 10px; /* Padding superior */
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+    color: #adb5bd; /* Color del texto */
+}
+
+/* ==================================================================== */
+/* Estilos Específicos para Tipos de Contenido (Productos, etc.) */
+/* ==================================================================== */
+
+.product-grid, .product-list {
+    display: grid; /* Usa CSS Grid para las listas/rejillas de productos */
+    /* Default: 1 column for screens below 768px */
+    grid-template-columns: repeat(1, 1fr); /* Por defecto, una columna */
+    gap: 20px; /* Espacio entre elementos */
+    margin-top: 20px; /* Margen superior */
+    padding: 0 10px; /* Padding lateral */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+/* Media query para 2 columnas en pantallas medianas */
+@media (min-width: 768px) {
+    .product-grid, .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        gap: 25px; /* Ajusta el espacio */
+    }
+    main {
+        padding: 15px; /* Ajusta el padding del main */
+    }
+}
+
+/* Media query para 3 columnas en pantallas grandes */
+@media (min-width: 992px) {
+    .product-grid, .product-list {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+        gap: 30px; /* Ajusta el espacio */
+    }
+}
+
+/* Media query para 4 columnas en pantallas extra grandes */
+@media (min-width: 1200px) {
+    .product-grid, .product-list {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+        gap: 30px; /* Mantiene el espacio */
+    }
+    main {
+         padding: 20px; /* Vuelve al padding original del main */
+    }
+}
+
+.product-grid .product-item img,
+.product-list .product-item img {
+    width: 100%; /* La imagen ocupa el ancho completo de su contenedor */
+    height: 180px; /* Altura aumentada para las imágenes de lista */
+    object-fit: contain; /* La imagen se escala para caber sin recortarse */
+    margin-bottom: 15px; /* Margen inferior */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.product-item {
+    border: 1px solid #ddd; /* Borde alrededor del item */
+    padding: 20px; /* Padding interno */
+    text-align: center; /* Centra el texto */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex; /* Usa flexbox para organizar el contenido interno */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra horizontalmente los elementos */
+    width: 100%; /* Asegura que el item ocupe el ancho completo de su celda */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+.product-item h3, .product-item h4 {
+    margin-top: 0; /* Elimina el margen superior */
+    font-size: 1.3em; /* Tamaño de fuente */
+    color: #343a40; /* Color de texto */
+}
+
+.product-item p {
+    color: #555; /* Color de texto */
+    font-size: 1em; /* Tamaño de fuente */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.product-item a {
+    display: inline-block; /* Permite padding y margen */
+    margin-top: auto; /* Empuja el botón hacia abajo en flexbox */
+    padding: 10px 20px; /* Padding del botón */
+    background-color: #ffc107; /* Color de fondo del botón */
+    color: #212529; /* Color de texto del botón */
+    text-decoration: none; /* Elimina el subrayado */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+.product-item a:hover {
+    background-color: #e0a800; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para la página de detalle de producto */
+.product-detail {
+    display: flex; /* Usa flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 30px; /* Espacio entre los elementos */
+}
+
+/* Modificado para aplicar a cualquier imagen dentro de .product-detail */
+.product-detail img {
+    width: 100%; /* La imagen ocupa el ancho completo en pantallas pequeñas */
+    max-width: 450px; /* Ancho máximo */
+    height: auto; /* La altura se ajusta automáticamente */
+    object-fit: contain; /* La imagen se escala para caber sin recortarse */
+    flex: 1 1 400px; /* Permite que la imagen crezca y se encoja */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Sombra */
+}
+
+.product-detail .description-area {
+    flex: 2 1 450px; /* Permite que el área de descripción crezca y se encoja */
+}
+
+.product-detail h2 {
+    margin-top: 0; /* Elimina el margen superior */
+    font-size: 1.8em; /* Tamaño de fuente */
+    color: #343a40; /* Color de texto */
+}
+
+.product-detail .brand {
+    font-size: 1.1em; /* Tamaño de fuente */
+    color: #777; /* Color de texto */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.product-detail .price {
+    font-size: 2.2em; /* Tamaño de fuente grande */
+    color: #28a745; /* Color verde para el precio */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.product-detail .description {
+    margin-bottom: 25px; /* Margen inferior */
+    color: #555; /* Color de texto */
+    font-size: 1.1em; /* Tamaño de fuente */
+}
+
+.sizes-available ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding */
+    display: flex; /* Usa flexbox */
+    gap: 15px; /* Espacio entre elementos */
+    margin-top: 10px; /* Margen superior */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.sizes-available li {
+    background-color: #e9ecef; /* Color de fondo */
+    padding: 8px 15px; /* Padding */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 1px solid #ced4da; /* Borde */
+    font-size: 1em; /* Tamaño de fuente */
+    color: #343a40; /* Color de texto */
+}
+
+.product-gallery {
+    margin-top: 25px; /* Margen superior */
+    display: flex; /* Usa flexbox */
+    gap: 15px; /* Espacio entre imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan */
+}
+
+.product-gallery img {
+    width: 100px; /* Ancho fijo */
+    height: 100px; /* Altura fija */
+    object-fit: contain; /* La imagen se escala para caber sin recortarse */
+    border: 1px solid #ced4da; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: transform 0.2s ease; /* Transición suave para la transformación */
+}
+
+.product-gallery img:hover {
+    transform: scale(1.08); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+/* Estilos para páginas de contenido general */
+.about-us, .contact-info, .terms-content, .privacy-content {
+    margin-top: 25px; /* Margen superior */
+}
+
+.contact-info p {
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+.contact-info a {
+    color: #ffc107; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Subraya al pasar el ratón */
+}
+
+/* Estilos para formularios */
+form label {
+    font-weight: bold; /* Texto en negrita */
+    display: block; /* Ocupa todo el ancho */
+    margin-bottom: 8px; /* Margen inferior */
+    color: #343a40; /* Color de texto */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 12px; /* Padding interno */
+    margin-bottom: 20px; /* Margen inferior */
+    border: 1px solid #ced4da; /* Borde */
+    border-radius: 4 dappx; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+    color: #343a40; /* Color de texto */
+    background-color: #ffffff; /* Fondo blanco */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+form input[type="submit"] {
+    background-color: #ffc107; /* Color de fondo del botón */
+    color: #212529; /* Color de texto del botón */
+    padding: 12px 25px; /* Padding */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-size: 1.1em; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+form input[type="submit"]:hover {
+    background-color: #e0a800; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* ==================================================================== */
+/* Media Queries para Responsividad */
+/* ==================================================================== */
+
+/* Aplica a pantallas más pequeñas que 768px */
+@media (max-width: 767.98px) {
+    header {
+        flex-direction: column; /* Apila los elementos del encabezado */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+        padding: 1rem 15px; /* Ajusta el padding */
+    }
+
+    header h1 {
+        margin: 0 0 10px 0; /* Ajusta el margen del título */
+        font-size: 1.8em; /* Ajusta el tamaño de fuente */
+    }
+
+    nav {
+        width: 100%; /* La navegación ocupa todo el ancho */
+    }
+
+    nav ul {
+        flex-direction: column; /* Apila los elementos de la lista de navegación */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    nav ul li {
+        margin: 8px 0; /* Ajusta el margen */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Ajusta el tamaño de fuente */
+        padding: 8px 15px; /* Ajusta el padding */
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Ajusta las columnas */
+        gap: 15px; /* Ajusta el espacio */
+    }
+
+    .footer-column h4 {
+        font-size: 1em; /* Ajusta el tamaño de fuente */
+    }
+
+    .footer-column ul li a {
+         font-size: 0.85em; /* Ajusta el tamaño de fuente */
+    }
+
+    .footer-info-links {
+        flex-direction: column; /* Apila los enlaces de información */
+        align-items: center; /* Centra los enlaces */
+    }
+
+    .footer-info-links li {
+        margin: 8px 0; /* Ajusta el margen */
+        padding: 0; /* Elimina el padding */
+    }
+
+    .footer-info-links li:not(:last-child)::after {
+        content: none; /* Elimina el separador vertical */
+    }
+
+    .footer-info-links li a {
+        font-size: 0.9em; /* Ajusta el tamaño de fuente */
+    }
+
+    .product-detail {
+        flex-direction: column; /* Apila los elementos del detalle de producto */
+        gap: 25px; /* Ajusta el espacio */
+    }
+
+    .product-detail img, .product-detail .description-area {
+        flex: auto; /* Permite que los elementos se ajusten automáticamente */
+    }
+
+    .product-detail > img {
+         max-height: 300px; /* Ajusta la altura máxima de la imagen principal */
+    }
+
+    .product-detail h2 {
+        font-size: 1.5em; /* Ajusta el tamaño de fuente */
+    }
+
+     .product-detail .price {
+        font-size: 2em; /* Ajusta el tamaño de fuente */
+    }
+
+    .product-grid .product-item img,
+    .product-list .product-item img {
+        height: 180px; /* Ajusta la altura de las imágenes de lista */
+    }
+
+     .product-item h3, .product-item h4 {
+        font-size: 1.1em; /* Ajusta el tamaño de fuente */
+    }
+
+    .product-item p {
+        font-size: 0.95em; /* Ajusta el tamaño de fuente */
+    }
+
+    .product-item a {
+        padding: 9px 18px; /* Ajusta el padding del botón */
+        font-size: 1em; /* Ajusta el tamaño de fuente */
+    }
+
+    main {
+        padding: 15px; /* Ajusta el padding del main */
+    }
+
+     .product-gallery img {
+         width: 80px; /* Ajusta el ancho de las imágenes de la galería */
+         height: 80px; /* Ajusta la altura de las imágenes de la galería */
+     }
+}
+
+/* Aplica a pantallas más pequeñas que 480px */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em; /* Ajusta el tamaño de fuente */
+    }
+
+    nav ul li a {
+        font-size: 0.9em; /* Ajusta el tamaño de fuente */
+        padding: 6px 10px; /* Ajusta el padding */
+    }
+
+     .product-grid, .product-list {
+         gap: 15px; /* Ajusta el espacio */
+         padding: 0 5px; /* Ajusta el padding */
+     }
+
+     .product-item {
+         padding: 15px; /* Ajusta el padding */
+     }
+
+     .product-grid .product-item img,
+    .product-list .product-item img {
+        height: 150px; /* Altura ajustada para pantallas muy pequeñas */
+    }
+
+     .product-item h3, .product-item h4 {
+        font-size: 1em; /* Ajusta el tamaño de fuente */
+    }
+
+    .product-item p {
+        font-size: 0.9em; /* Ajusta el tamaño de fuente */
+    }
+
+     .product-item a {
+        padding: 8px 15px; /* Ajusta el padding del botón */
+        font-size: 0.95em; /* Ajusta el tamaño de fuente */
+    }
+
+     .product-detail > img {
+         max-height: 250px; /* Ajusta la altura máxima de la imagen principal */
+     }
+
+     .product-detail h2 {
+        font-size: 1.4em; /* Ajusta el tamaño de fuente */
+    }
+
+     .product-detail .price {
+        font-size: 1.8em; /* Ajusta el tamaño de fuente */
+    }
+
+     .product-gallery img {
+         width: 60px; /* Ajusta el ancho de las imágenes de la galería */
+         height: 60px; /* Ajusta la altura de las imágenes de la galería */
+     }
+
+     .footer-container {
+        grid-template-columns: 1fr; /* Una sola columna en el pie de página */
+     }
+
+     .footer-column {
+        text-align: center; /* Centra el texto de la columna */
+     }
+
+      .footer-column ul {
+        align-items: center; /* Centra los elementos de la lista */
+      }
+
+      .footer-column ul li {
+          margin-bottom: 8px; /* Ajusta el margen */
+      }
+}
